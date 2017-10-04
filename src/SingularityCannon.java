@@ -1,3 +1,11 @@
+/**
+ * <name>SingularityCannon</name>
+ * <extends>Weapon</extends>
+ * <implements>Drawable</implements>
+ * <author>Ian Doarn</author>
+ * <date>10-4-2017</date>
+ * <summary>Subclass of Weapon</summary>
+ */
 public class SingularityCannon extends Weapon implements Drawable {
 
     SingularityCannon() {
@@ -13,7 +21,13 @@ public class SingularityCannon extends Weapon implements Drawable {
 
     @Override
     public int compareTo(Comparable c) {
-        /* Override for weapon */
+        /* Override for weapon compareTo method
+
+           Compare to another weapon based on loadTime
+             - If current weapon loadTime > other, return 1
+             - If current weapon loadTime < other, return -1
+             - else, return 0
+        */
         if (loadTime > ((Weapon)c).loadTime) {
             return 1;
         } else if (loadTime < ((Weapon)c).loadTime) {

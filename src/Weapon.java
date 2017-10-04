@@ -1,3 +1,17 @@
+/**
+ * <name>
+ *     Weapon
+ * </name>
+ * <implements>
+ *     Drawable, Comparable
+ * </implements>
+ * <author>Ian Doarn</author>
+ * <date>10-4-2017</date>
+ * <summary>
+ *     Weapon class for creating and adding weapons
+ *     to SpaceShip objects
+ * </summary>
+ */
 public abstract class Weapon implements Drawable, Comparable {
 
     protected double fireSpeed;
@@ -20,6 +34,12 @@ public abstract class Weapon implements Drawable, Comparable {
     }
 
     public int compareTo(Comparable c) {
+        /*
+            Compare to another weapon based on loadTime
+             - If current weapon loadTime > other, return 1
+             - If current weapon loadTime < other, return -1
+             - else, return 0
+        */
         if (loadTime > ((Weapon)c).loadTime)
             return 1;
         else if (loadTime < ((Weapon)c).loadTime)

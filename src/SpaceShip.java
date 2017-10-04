@@ -1,3 +1,16 @@
+/**
+ * <name>
+ *     SpaceShip
+ * </name>
+ * <implements>
+ *     Drawable
+ * </implements>
+ * <author>Ian Doarn</author>
+ * <date>10-4-2017</date>
+ *  <summary>
+ *      SpaceShip class
+ *  </summary>
+ */
 public class SpaceShip implements Drawable {
 
     private Weapon[] weapons;
@@ -52,6 +65,9 @@ public class SpaceShip implements Drawable {
     }
 
     private void sortWeapons(Comparable[] weaponsArray) {
+        /*
+            Sort weapons using simple insertion sort method
+         */
         for (int i = 1; i < weaponsArray.length; i++) {
             Comparable c = weaponsArray[i];
             int j = i - 1;
@@ -64,7 +80,12 @@ public class SpaceShip implements Drawable {
     }
 
     public void fireFastestWeapons(int n) {
+        /* Fire the fastest weapon */
+
+        // First Sort the weapons by firing speed
         sortWeapons(weapons);
+
+        // Fire weapon at given index
         weapons[n].fire();
     }
 
